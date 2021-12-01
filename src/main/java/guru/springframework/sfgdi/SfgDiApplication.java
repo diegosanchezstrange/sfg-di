@@ -15,10 +15,10 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
 
-		/*System.out.println("------ Primary");
+		System.out.println("------ Primary");
 		GenericGreetingController prController = (GenericGreetingController) ctx.getBean("genericGreetingController");
 
-		System.out.println(prController.getGreeting());*/
+		System.out.println(prController.getGreeting());
 
 		System.out.println("------ Property");
 		PropertyGreetingController pController = (PropertyGreetingController)ctx.getBean("propertyGreetingController");
