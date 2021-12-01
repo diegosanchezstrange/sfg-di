@@ -1,9 +1,6 @@
 package guru.springframework.sfgdi;
 
-import guru.springframework.sfgdi.controllers.ConstructorGreetingController;
-import guru.springframework.sfgdi.controllers.GenericGreetingController;
-import guru.springframework.sfgdi.controllers.PropertyGreetingController;
-import guru.springframework.sfgdi.controllers.SetterGreetingController;
+import guru.springframework.sfgdi.controllers.*;
 import guru.springframework.sfgdi.services.GreetingSeviceImplementation;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +11,11 @@ public class SfgDiApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
+
+		System.out.println("------ I18n");
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+
+		System.out.println(i18nController.getGreeting());
 
 		System.out.println("------ Primary");
 		GenericGreetingController prController = (GenericGreetingController) ctx.getBean("genericGreetingController");
